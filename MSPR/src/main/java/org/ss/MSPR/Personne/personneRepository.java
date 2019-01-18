@@ -1,6 +1,4 @@
-package org.ss.MSPR;
-
-import org.ss.MSPR.personne;
+package org.ss.MSPR.Personne;
 
 import java.util.List;
 

@@ -1,8 +1,13 @@
-package org.ss.MSPR;
+package org.ss.MSPR.Personne;
+
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.ss.MSPR.Emprunt.emprunt;
 
 @Entity
 public class personne {
@@ -14,12 +19,15 @@ public class personne {
     private String visage;
     private String finContrat;
     private String role;
+    @OneToMany
+    private Collection<emprunt> emprunt;
 
     public personne() {}
 
-    public personne(String nom, String prenom) {
+    public personne(String nom, String prenom, emprunt emprunt) {
         this.nom = nom;
         this.prenom = prenom;
+        this.emprunt.add(emprunt);
     }
 
     public Long getId() {
