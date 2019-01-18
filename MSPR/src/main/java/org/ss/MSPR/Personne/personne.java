@@ -1,10 +1,14 @@
 package org.ss.MSPR.Personne;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -12,33 +16,40 @@ import org.ss.MSPR.Emprunt.emprunt;
 import org.ss.MSPR.Role.role;
 
 @Entity
-public class personne {
+public class personne implements java.io.Serializable {
 
-    private @Id @GeneratedValue Long id;
+    private Long id;
     private String nom;
     private String prenom;
     private String adresse;
     private String visage;
     private String finContrat;
-    @ManyToOne
     private role role;
-    @OneToMany(mappedBy="personne")
-    private Collection<emprunt> emprunt;
+    private Set<emprunt> emprunt = new HashSet<emprunt>(0);
 
     public personne() {}
 
-    public personne(String nom, String prenom, emprunt emprunt, role role) {
+    public personne(String nom, String prenom, Set<emprunt> emprunt, role role) {
         this.nom = nom;
         this.prenom = prenom;
         this.role = role;
-        this.emprunt.add(emprunt);
+        this.emprunt = emprunt;
     }
 
     /**
      * @return the id
      */
+    @Id 
+    @GeneratedValue 
     public Long getId() {
         return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /**
@@ -114,6 +125,8 @@ public class personne {
     /**
      * @return the role
      */
+    @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "roleId", nullable = false)
     public role getRole() {
         return role;
     }
@@ -125,18 +138,18 @@ public class personne {
         this.role = role;
     }
 
-    /**
-     * @return the emprunt
-     */
-    public Collection<emprunt> getEmprunt() {
-        return emprunt;
-    }
+	/**
+	 * @return the emprunt
+	 */
+    @OneToMany(mappedBy="personne")
+	public Set<emprunt> getEmprunt() {
+		return emprunt;
+	}
 
-    /**
-     * @param emprunt the emprunt to set
-     */
-    public void setEmprunt(Collection<emprunt> emprunt) {
-        this.emprunt = emprunt;
-    }
-
+	/**
+	 * @param emprunt the emprunt to set
+	 */
+	public void setEmprunt(Set<emprunt> emprunt) {
+		this.emprunt = emprunt;
+    }  
 }

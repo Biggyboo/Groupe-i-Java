@@ -1,7 +1,10 @@
 package org.ss.MSPR.Role;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,16 +15,15 @@ import org.ss.MSPR.Personne.personne;
 @Entity
 public class role {
 
-    private @Id @GeneratedValue Long id;
+    private Long roleId;
     private String libelle;
-    @OneToMany(mappedBy="role")
-    private Collection<personne> personne;
+    private Set<personne> personne = new HashSet<personne>(0);
 
     public role() {}
 
-    public role(String libelle, personne personne) {
+    public role(String libelle, Set<personne> personne) {
         this.libelle = libelle;
-        this.personne.add(personne);
+        this.personne = personne;
     }
 
     /**
@@ -39,9 +41,34 @@ public class role {
     }
 
     /**
-     * @return the id
+     * @return the roleId
      */
-    public Long getId() {
-        return id;
+    @Id 
+    @GeneratedValue
+    @Column(name="id")
+    public Long getRoleId() {
+        return roleId;
+    }
+
+     /**
+     * @param roleId the roleId to set
+     */
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+	/**
+	 * @return the personne
+	 */
+    @OneToMany(mappedBy="role")
+	public Set<personne> getPersonne() {
+		return personne;
+	}
+
+	/**
+	 * @param personne the personne to set
+	 */
+	public void setPersonne(Set<personne> personne) {
+		this.personne = personne;
     }
 }
