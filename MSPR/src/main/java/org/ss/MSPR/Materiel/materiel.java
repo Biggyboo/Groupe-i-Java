@@ -16,7 +16,7 @@ public class materiel {
     private String libelle;
     private String description;
     private Long stock;
-    @OneToMany
+    @OneToMany(mappedBy="materiel")
     private Collection<emprunt> emprunt;
 
     public materiel() {}
