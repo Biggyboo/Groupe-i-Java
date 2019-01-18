@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MsprApplication",
+            "request": "launch",
+            "mainClass": "org.ss.MSPR.MsprApplication",
+            "projectName": "MSPR"
+        }
+    ]
+}

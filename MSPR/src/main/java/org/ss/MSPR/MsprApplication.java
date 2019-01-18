@@ -10,4 +10,3 @@ public class MsprApplication {
 		SpringApplication.run(MsprApplication.class, args);
 	}
 }
-
