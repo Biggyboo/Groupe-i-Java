@@ -16,9 +16,6 @@ public class Emprunt {
   private long materiel;
   private long personne;
 
-
-  @Id
-  @GeneratedValue
   public long getQuantite() {
     return quantite;
   }
@@ -27,7 +24,8 @@ public class Emprunt {
     this.quantite = quantite;
   }
 
-
+  @Id
+  @GeneratedValue
   public long getEmpruntId() {
     return empruntId;
   }
