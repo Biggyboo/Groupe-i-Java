@@ -1,7 +1,6 @@
 package com.mspr.API.POJO;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "role")

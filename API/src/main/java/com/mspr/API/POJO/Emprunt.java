@@ -1,9 +1,15 @@
 package com.mspr.API.POJO;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @Entity
 @Table(name = "emprunt")
@@ -11,10 +17,11 @@ public class Emprunt {
 
   private long quantite;
   private long empruntId;
-  private java.sql.Timestamp dateDeb;
-  private java.sql.Timestamp dateFin;
+  private Date dateDeb;
+  private Date dateFin;
   private long materiel;
   private long personne;
+  private boolean rendu;
 
   public long getQuantite() {
     return quantite;
@@ -25,7 +32,7 @@ public class Emprunt {
   }
 
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.AUTO)
   public long getEmpruntId() {
     return empruntId;
   }
@@ -34,21 +41,23 @@ public class Emprunt {
     this.empruntId = empruntId;
   }
 
-
-  public java.sql.Timestamp getDateDeb() {
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  @JsonDeserialize(using = DateDeserializer.class, as=Date.class)
+  public Date getDateDeb() {
     return dateDeb;
   }
 
-  public void setDateDeb(java.sql.Timestamp dateDeb) {
+  public void setDateDeb(Date dateDeb) {
     this.dateDeb = dateDeb;
   }
 
-
-  public java.sql.Timestamp getDateFin() {
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  @JsonDeserialize(using = DateDeserializer.class, as=Date.class)
+  public Date getDateFin() {
     return dateFin;
   }
 
-  public void setDateFin(java.sql.Timestamp dateFin) {
+  public void setDateFin(Date dateFin) {
     this.dateFin = dateFin;
   }
 
@@ -68,6 +77,14 @@ public class Emprunt {
 
   public void setPersonne(long personne) {
     this.personne = personne;
+  }
+
+  public boolean isRendu() {
+    return rendu;
+  }
+
+  public void setRendu(boolean rendu) {
+    this.rendu = rendu;
   }
 
 }
