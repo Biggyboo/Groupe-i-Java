@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
     // Pointez pour afficher la description des attributs existants.
     // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
@@ -22,6 +23,15 @@
             "request": "launch",
             "mainClass": "com.mspr.API.ApiApplication",
             "projectName": "API"
+=======
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MsprApplication",
+            "request": "launch",
+            "mainClass": "org.ss.MSPR.MsprApplication",
+            "projectName": "MSPR"
+>>>>>>> parent of ce36576... modif
         }
     ]
 }

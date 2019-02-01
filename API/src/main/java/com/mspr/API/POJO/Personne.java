@@ -1,10 +1,14 @@
 package com.mspr.API.POJO;
 
+<<<<<<< HEAD
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+=======
+import javax.persistence.*;
+>>>>>>> parent of ce36576... modif
 
 @Entity
 @Table(name = "personne")
@@ -39,7 +43,11 @@ public class Personne {
     }
 
     @Id
+<<<<<<< HEAD
     @GeneratedValue(strategy = GenerationType.AUTO)
+=======
+    @GeneratedValue
+>>>>>>> parent of ce36576... modif
     public long getPersonneId() {
         return personneId;
     }

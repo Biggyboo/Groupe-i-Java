@@ -1,6 +1,10 @@
 package com.mspr.API.POJO;
 
 import javax.persistence.*;
+<<<<<<< HEAD
+=======
+import java.util.Collection;
+>>>>>>> parent of ce36576... modif
 
 @Entity
 @Table(name = "role")
