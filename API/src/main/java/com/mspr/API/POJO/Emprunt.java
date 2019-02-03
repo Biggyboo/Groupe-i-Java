@@ -11,6 +11,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,7 +40,16 @@ public class Emprunt {
   }
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(generator = "sequence-emprunt")
+  @GenericGenerator(
+          name = "sequence-emprunt",
+          strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+          parameters = {
+                  @Parameter(name = "sequence_name", value = "emprunt_sequence"),
+                  @Parameter(name = "initial_value", value = "1"),
+                  @Parameter(name = "increment_size", value = "1")
+          }
+  )
   public long getEmpruntId() {
     return empruntId;
   }
