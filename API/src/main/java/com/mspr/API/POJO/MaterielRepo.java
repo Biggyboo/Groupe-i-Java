@@ -1,0 +1,4 @@
+package com.mspr.API.POJO;
+
+public interface MaterielRepo {
+}

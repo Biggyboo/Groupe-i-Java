@@ -1,53 +1,49 @@
 package com.mspr.API.POJO;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+import javax.persistence.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
-@Table(name = "personne")
 public class Personne {
-
-    private long personneId;
+    private Long personneId;
     private String adresse;
     private String finContrat;
     private String nom;
     private String prenom;
-    private String visage;
     private String identifiant;
     private String mdp;
+    private byte[] visage;
     private Long role;
-
-    public Personne() {}
-
-    public Personne(String nom, String prenom) {
-        this.prenom = prenom;
-        this.nom = nom;
-    }
-
-    public Personne(String adresse, String finContrat, String nom, String prenom, String visage, Long role, String identifiant, String mdp) {
-        this.adresse = adresse;
-        this.finContrat = finContrat;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.visage = visage;
-        this.role = role;
-        this .identifiant = identifiant;
-        this.mdp = mdp;
-    }
+    private Collection<Emprunt> lesEmprunts;
+    private Role leRole;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public long getPersonneId() {
+    @Column(name = "personne_id")
+    @GeneratedValue(generator = "sequence-personne")
+    @GenericGenerator(
+            name = "sequence-personne",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "personne_sequence"),
+                    @Parameter(name = "initial_value", value = "4"),
+                    @Parameter(name = "increment_size", value = "1")
+            }
+    )
+    public Long getPersonneId() {
         return personneId;
     }
 
-    public void setPersonneId(long personneId) {
+    public void setPersonneId(Long personneId) {
         this.personneId = personneId;
     }
 
+    @Basic
+    @Column(name = "adresse")
     public String getAdresse() {
         return adresse;
     }
@@ -56,6 +52,8 @@ public class Personne {
         this.adresse = adresse;
     }
 
+    @Basic
+    @Column(name = "fin_contrat")
     public String getFinContrat() {
         return finContrat;
     }
@@ -64,6 +62,8 @@ public class Personne {
         this.finContrat = finContrat;
     }
 
+    @Basic
+    @Column(name = "nom")
     public String getNom() {
         return nom;
     }
@@ -72,6 +72,8 @@ public class Personne {
         this.nom = nom;
     }
 
+    @Basic
+    @Column(name = "prenom")
     public String getPrenom() {
         return prenom;
     }
@@ -80,48 +82,84 @@ public class Personne {
         this.prenom = prenom;
     }
 
-    public String getVisage() {
-        return visage;
-    }
-
-    public void setVisage(String visage) {
-        this.visage = visage;
-    }
-
-
-    public Long getRole() {
-    return role;
-    }
-
-    public void setRole(Long role) {
-    this.role = role;
-    }
-
-    /**
-     * @return the identifiant
-     */
+    @Basic
+    @Column(name = "identifiant")
     public String getIdentifiant() {
         return identifiant;
     }
 
-    /**
-     * @param identifiant the identifiant to set
-     */
     public void setIdentifiant(String identifiant) {
         this.identifiant = identifiant;
     }
 
-    /**
-     * @return the mdp
-     */
+    @Basic
+    @Column(name = "mdp")
     public String getMdp() {
         return mdp;
     }
 
-    /**
-     * @param mdp the mdp to set
-     */
     public void setMdp(String mdp) {
         this.mdp = mdp;
+    }
+
+    @Basic
+    @Column(name = "visage")
+    public byte[] getVisage() {
+        return visage;
+    }
+
+    public void setVisage(byte[] visage) {
+        this.visage = visage;
+    }
+
+    @Basic
+    @Column(name = "role", insertable = false, updatable = false)
+    public Long getRole() {
+        return role;
+    }
+
+    public void setRole(Long role) {
+        this.role = role;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Personne personne = (Personne) o;
+        return Objects.equals(personneId, personne.personneId) &&
+                Objects.equals(adresse, personne.adresse) &&
+                Objects.equals(finContrat, personne.finContrat) &&
+                Objects.equals(nom, personne.nom) &&
+                Objects.equals(prenom, personne.prenom) &&
+                Objects.equals(identifiant, personne.identifiant) &&
+                Objects.equals(mdp, personne.mdp) &&
+                Arrays.equals(visage, personne.visage);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(personneId, adresse, finContrat, nom, prenom, identifiant, mdp);
+        result = 31 * result + Arrays.hashCode(visage);
+        return result;
+    }
+
+    @OneToMany(mappedBy = "laPersonne", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<Emprunt> getLesEmprunts() {
+        return lesEmprunts;
+    }
+
+    public void setLesEmprunts(Collection<Emprunt> lesEmprunts) {
+        this.lesEmprunts = lesEmprunts;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "role", referencedColumnName = "role_id")
+    public Role getLeRole() {
+        return leRole;
+    }
+
+    public void setLeRole(Role leRole) {
+        this.leRole = leRole;
     }
 }

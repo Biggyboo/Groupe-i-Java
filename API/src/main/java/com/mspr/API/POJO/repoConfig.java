@@ -10,5 +10,7 @@ public class repoConfig extends RepositoryRestConfigurerAdapter {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         config.exposeIdsFor(Personne.class);
         config.exposeIdsFor(Emprunt.class);
+        config.exposeIdsFor(Role.class);
+        config.exposeIdsFor(Materiel.class);
     }
 }

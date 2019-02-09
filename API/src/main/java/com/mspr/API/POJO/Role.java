@@ -1,38 +1,55 @@
 package com.mspr.API.POJO;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
-@Table(name = "role")
 public class Role {
-
-    private long roleId;
+    private Long roleId;
     private String libelle;
-    //private Collection<Personne> personnes;
-
-    public Role() {
-    }
-
-    public Role(String libelle) {
-        this.libelle = libelle;
-    }
+    private Collection<Personne> personnes;
 
     @Id
-    @GeneratedValue
-    public long getRoleId() {
-    return roleId;
+    @Column(name = "role_id")
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setRoleId(long roleId) {
-    this.roleId = roleId;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 
-
+    @Basic
+    @Column(name = "libelle")
     public String getLibelle() {
-    return libelle;
+        return libelle;
     }
 
     public void setLibelle(String libelle) {
-    this.libelle = libelle;
+        this.libelle = libelle;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role = (Role) o;
+        return Objects.equals(roleId, role.roleId) &&
+                Objects.equals(libelle, role.libelle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(roleId, libelle);
+    }
+
+    @OneToMany(mappedBy = "leRole")
+    public Collection<Personne> getPersonnes() {
+        return personnes;
+    }
+
+    public void setPersonnes(Collection<Personne> personnes) {
+        this.personnes = personnes;
     }
 }

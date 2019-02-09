@@ -1,88 +1,138 @@
 package com.mspr.API.POJO;
 
-import java.util.Date;
+import javax.persistence.*;
+import java.sql.Date;
+import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
-@Table(name = "emprunt")
 public class Emprunt {
+    private Integer quantite;
+    private Long empruntId;
+    private Date dateDeb;
+    private Date dateFin;
+    private Boolean rendu;
+    private Long materiel;
+    private Long personne;
+    private Materiel leMateriel;
+    private Personne laPersonne;
 
-  private long quantite;
-  private long empruntId;
-  private Date dateDeb;
-  private Date dateFin;
-  private long materiel;
-  private long personne;
-  private boolean rendu;
+    @Id
+    @Column(name = "emprunt_id")
+    @GeneratedValue(generator = "sequence-emprunt")
+    @GenericGenerator(
+            name = "sequence-emprunt",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "emprunt_sequence"),
+                    @Parameter(name = "initial_value", value = "1"),
+                    @Parameter(name = "increment_size", value = "1")
+            }
+    )
+    public Long getEmpruntId() {
+        return empruntId;
+    }
 
-  public long getQuantite() {
-    return quantite;
-  }
+    public void setEmpruntId(Long empruntId) {
+        this.empruntId = empruntId;
+    }
 
-  public void setQuantite(long quantite) {
-    this.quantite = quantite;
-  }
+    @Basic
+    @Column(name = "date_deb")
+    public Date getDateDeb() {
+        return dateDeb;
+    }
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  public long getEmpruntId() {
-    return empruntId;
-  }
+    public void setDateDeb(Date dateDeb) {
+        this.dateDeb = dateDeb;
+    }
 
-  public void setEmpruntId(long empruntId) {
-    this.empruntId = empruntId;
-  }
+    @Basic
+    @Column(name = "date_fin")
+    public Date getDateFin() {
+        return dateFin;
+    }
 
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-  @JsonDeserialize(using = DateDeserializer.class, as = Date.class)
-  public Date getDateDeb() {
-    return dateDeb;
-  }
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
+    }
 
-  public void setDateDeb(Date dateDeb) {
-    this.dateDeb = dateDeb;
-  }
+    @Basic
+    @Column(name = "rendu")
+    public Boolean getRendu() {
+        return rendu;
+    }
 
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-  @JsonDeserialize(using = DateDeserializer.class, as = Date.class)
-  public Date getDateFin() {
-    return dateFin;
-  }
+    public void setRendu(Boolean rendu) {
+        this.rendu = rendu;
+    }
 
-  public void setDateFin(Date dateFin) {
+    @Basic
+    @Column(name = "quantite")
+    public Integer getQuantite() {
+        return quantite;
+    }
 
-  }
+    public void setQuantite(Integer quantite) {
+        this.quantite = quantite;
+    }
 
-  public long getMateriel() {
-    return materiel;
-  }
+    @Basic
+    @Column(name = "materiel", insertable = false, updatable = false)
+    public Long getMateriel() {
+        return materiel;
+    }
 
-  public void setMateriel(long materiel) {
-    this.materiel = materiel;
-  }
+    public void setMateriel(Long materiel) {
+        this.materiel = materiel;
+    }
 
+    @Basic
+    @Column(name = "personne", insertable = false, updatable = false)
+    public Long getPersonne() {
+        return personne;
+    }
 
-  public long getPersonne() {
-    return personne;
-  }
+    public void setPersonne(Long personne) {
+        this.personne = personne;
+    }
 
-  public void setPersonne(long personne) {
-    this.personne = personne;
-  }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Emprunt emprunt = (Emprunt) o;
+        return Objects.equals(quantite, emprunt.quantite) &&
+                Objects.equals(empruntId, emprunt.empruntId) &&
+                Objects.equals(dateDeb, emprunt.dateDeb) &&
+                Objects.equals(dateFin, emprunt.dateFin) &&
+                Objects.equals(rendu, emprunt.rendu);
+    }
 
-  public boolean isRendu() {
-    return rendu;
-  }
+    @Override
+    public int hashCode() {
+        return Objects.hash(quantite, empruntId, dateDeb, dateFin, rendu);
+    }
 
-  public void setRendu(boolean rendu) {
-    this.rendu = rendu;
-  }
+    @ManyToOne
+    @JoinColumn(name = "materiel", referencedColumnName = "materiel_id")
+    public Materiel getLeMateriel() {
+        return leMateriel;
+    }
+
+    public void setLeMateriel(Materiel leMateriel) {
+        this.leMateriel = leMateriel;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "personne", referencedColumnName = "personne_id")
+    public Personne getLaPersonne() {
+        return laPersonne;
+    }
+
+    public void setLaPersonne(Personne laPersonne) {
+        this.laPersonne = laPersonne;
+    }
 }

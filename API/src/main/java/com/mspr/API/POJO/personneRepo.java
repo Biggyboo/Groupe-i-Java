@@ -2,5 +2,6 @@ package com.mspr.API.POJO;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface personneRepo extends CrudRepository<Personne, Long> {
+public interface PersonneRepo extends CrudRepository<Personne, Long> {
+
 }
