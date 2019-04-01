@@ -1,5 +1,7 @@
 package com.mspr.API.POJO;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -14,6 +16,16 @@ public class Materiel {
 
     @Id
     @Column(name = "materiel_id")
+    @GeneratedValue(generator = "sequence-materiel")
+    @GenericGenerator(
+            name = "sequence-materiel",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @org.hibernate.annotations.Parameter(name = "sequence_name", value = "materiel_sequence"),
+                    @org.hibernate.annotations.Parameter(name = "initial_value", value = "1"),
+                    @org.hibernate.annotations.Parameter(name = "increment_size", value = "1")
+            }
+    )
     public Long getMaterielId() {
         return materielId;
     }

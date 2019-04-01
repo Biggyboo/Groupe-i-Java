@@ -2,11 +2,10 @@ package com.mspr.API.POJO;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 public class Personne {
@@ -16,8 +15,7 @@ public class Personne {
     private String nom;
     private String prenom;
     private String identifiant;
-    private String mdp;
-    private byte[] visage;
+    private String visage;
     private Long role;
     private Collection<Emprunt> lesEmprunts;
     private Role leRole;
@@ -93,22 +91,12 @@ public class Personne {
     }
 
     @Basic
-    @Column(name = "mdp")
-    public String getMdp() {
-        return mdp;
-    }
-
-    public void setMdp(String mdp) {
-        this.mdp = mdp;
-    }
-
-    @Basic
     @Column(name = "visage")
-    public byte[] getVisage() {
+    public String getVisage() {
         return visage;
     }
 
-    public void setVisage(byte[] visage) {
+    public void setVisage(String visage) {
         this.visage = visage;
     }
 
@@ -133,15 +121,12 @@ public class Personne {
                 Objects.equals(nom, personne.nom) &&
                 Objects.equals(prenom, personne.prenom) &&
                 Objects.equals(identifiant, personne.identifiant) &&
-                Objects.equals(mdp, personne.mdp) &&
-                Arrays.equals(visage, personne.visage);
+                Objects.equals(visage, personne.visage);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(personneId, adresse, finContrat, nom, prenom, identifiant, mdp);
-        result = 31 * result + Arrays.hashCode(visage);
-        return result;
+        return Objects.hash(personneId, adresse, finContrat, nom, prenom, identifiant, visage);
     }
 
     @OneToMany(mappedBy = "laPersonne", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -161,5 +146,10 @@ public class Personne {
 
     public void setLeRole(Role leRole) {
         this.leRole = leRole;
+    }
+
+    public List<Personne> findPersonneByIdentifiant(String identifiant) {
+        PersonneRepo accountRepository = (PersonneRepo) RepoConfig.contextProvider().getApplicationContext().getBean("personneRepo");
+        return accountRepository.findPersonneByIdentifiant(identifiant);
     }
 }
