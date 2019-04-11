@@ -1,6 +1,10 @@
-package com.mspr.API.POJO;
+package com.mspr.API.configuration;
 
 import com.mspr.API.ApplicationContextProvider;
+import com.mspr.API.POJO.Emprunt;
+import com.mspr.API.POJO.Materiel;
+import com.mspr.API.POJO.Personne;
+import com.mspr.API.POJO.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
