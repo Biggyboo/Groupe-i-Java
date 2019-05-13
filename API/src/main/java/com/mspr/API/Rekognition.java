@@ -45,6 +45,7 @@ public class Rekognition {
         String response = "";
         switchSatus = false;
         try {
+            System.out.println(json.get("identifiant"));
             rekognition(json.get("imgSource"), json.get("identifiant"));
         } catch (Exception e) {
             e.printStackTrace();

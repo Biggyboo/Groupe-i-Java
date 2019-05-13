@@ -1,131 +1,93 @@
 package com.mspr.API.POJO;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.util.Objects;
-
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 @Entity
+@IdClass(EmpruntPK.class)
 public class Emprunt {
-    private Integer quantite;
-    private Long empruntId;
-    private Date dateDeb;
-    private Date dateFin;
-    private Boolean rendu;
-    private Long materiel;
-    private Long personne;
-    private Materiel leMateriel;
+    private String idMateriel;
+    private long idPersonne;
+    private boolean rendu;
+    private String dateemprunt;
+    private String daterendu;
     private Personne laPersonne;
+    private Materiel leMateriel;
 
     @Id
-    @Column(name = "emprunt_id")
-    @GeneratedValue(generator = "sequence-emprunt")
-    @GenericGenerator(
-            name = "sequence-emprunt",
-            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
-            parameters = {
-                    @Parameter(name = "sequence_name", value = "emprunt_sequence"),
-                    @Parameter(name = "initial_value", value = "1"),
-                    @Parameter(name = "increment_size", value = "1")
-            }
-    )
-    public Long getEmpruntId() {
-        return empruntId;
+    @Column(name = "id_materiel", nullable = false, length = 60)
+    public String getIdMateriel() {
+        return idMateriel;
     }
 
-    public void setEmpruntId(Long empruntId) {
-        this.empruntId = empruntId;
+    public void setIdMateriel(String idMateriel) {
+        this.idMateriel = idMateriel;
     }
 
-    @Basic
-    @Column(name = "date_deb")
-    public Date getDateDeb() {
-        return dateDeb;
+    @Id
+    @Column(name = "id_personne", nullable = false)
+    public long getIdPersonne() {
+        return idPersonne;
     }
 
-    public void setDateDeb(Date dateDeb) {
-        this.dateDeb = dateDeb;
+    public void setIdPersonne(long idPersonne) {
+        this.idPersonne = idPersonne;
     }
 
     @Basic
-    @Column(name = "date_fin")
-    public Date getDateFin() {
-        return dateFin;
-    }
-
-    public void setDateFin(Date dateFin) {
-        this.dateFin = dateFin;
-    }
-
-    @Basic
-    @Column(name = "rendu")
-    public Boolean getRendu() {
+    @Column(name = "rendu", nullable = false)
+    public boolean isRendu() {
         return rendu;
     }
 
-    public void setRendu(Boolean rendu) {
+    public void setRendu(boolean rendu) {
         this.rendu = rendu;
     }
 
-    @Basic
-    @Column(name = "quantite")
-    public Integer getQuantite() {
-        return quantite;
+    @Id
+    @Column(name = "dateemprunt", nullable = false, length = -1)
+    public String getDateemprunt() {
+        return dateemprunt;
     }
 
-    public void setQuantite(Integer quantite) {
-        this.quantite = quantite;
-    }
-
-    @Basic
-    @Column(name = "materiel", insertable = false, updatable = false)
-    public Long getMateriel() {
-        return materiel;
-    }
-
-    public void setMateriel(Long materiel) {
-        this.materiel = materiel;
+    public void setDateemprunt(String dateemprunt) {
+        this.dateemprunt = dateemprunt;
     }
 
     @Basic
-    @Column(name = "personne", insertable = false, updatable = false)
-    public Long getPersonne() {
-        return personne;
+    @Column(name = "daterendu", nullable = true, length = -1)
+    public String getDaterendu() {
+        return daterendu;
     }
 
-    public void setPersonne(Long personne) {
-        this.personne = personne;
+    public void setDaterendu(String daterendu) {
+        this.daterendu = daterendu;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Emprunt emprunt = (Emprunt) o;
-        return Objects.equals(quantite, emprunt.quantite) &&
-                Objects.equals(empruntId, emprunt.empruntId) &&
-                Objects.equals(dateDeb, emprunt.dateDeb) &&
-                Objects.equals(dateFin, emprunt.dateFin) &&
-                Objects.equals(rendu, emprunt.rendu);
+
+        if (idPersonne != emprunt.idPersonne) return false;
+        if (rendu != emprunt.rendu) return false;
+        if (idMateriel != null ? !idMateriel.equals(emprunt.idMateriel) : emprunt.idMateriel != null) return false;
+        if (dateemprunt != null ? !dateemprunt.equals(emprunt.dateemprunt) : emprunt.dateemprunt != null) return false;
+        if (daterendu != null ? !daterendu.equals(emprunt.daterendu) : emprunt.daterendu != null) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(quantite, empruntId, dateDeb, dateFin, rendu);
+        int result = idMateriel != null ? idMateriel.hashCode() : 0;
+        result = 31 * result + (int) (idPersonne ^ (idPersonne >>> 32));
+        result = 31 * result + (rendu ? 1 : 0);
+        result = 31 * result + (dateemprunt != null ? dateemprunt.hashCode() : 0);
+        result = 31 * result + (daterendu != null ? daterendu.hashCode() : 0);
+        return result;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "materiel", referencedColumnName = "materiel_id")
-    public Materiel getLeMateriel() {
-        return leMateriel;
-    }
-
-    public void setLeMateriel(Materiel leMateriel) {
-        this.leMateriel = leMateriel;
-    }
-
     @ManyToOne
     @JoinColumn(name = "personne", referencedColumnName = "personne_id")
     public Personne getLaPersonne() {

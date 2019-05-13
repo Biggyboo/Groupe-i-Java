@@ -3,19 +3,14 @@ package com.mspr.API.POJO;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 public class Materiel {
-    private Long materielId;
-    private String libelle;
-    private String description;
-    private Long stock;
-    private Collection<Emprunt> lesEmprunts;
-
+    private Long id;
+    private long idType;
+    private Typemateriel leType;
     @Id
-    @Column(name = "materiel_id")
+    @Column(name = "id", nullable = false, length = 60)
     @GeneratedValue(generator = "sequence-materiel")
     @GenericGenerator(
             name = "sequence-materiel",
@@ -26,66 +21,47 @@ public class Materiel {
                     @org.hibernate.annotations.Parameter(name = "increment_size", value = "1")
             }
     )
-    public Long getMaterielId() {
-        return materielId;
+    public Long getId() {
+        return id;
     }
 
-    public void setMaterielId(Long materielId) {
-        this.materielId = materielId;
-    }
-
-    @Basic
-    @Column(name = "libelle")
-    public String getLibelle() {
-        return libelle;
-    }
-
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
-    }
-
-    @Basic
-    @Column(name = "description")
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Basic
-    @Column(name = "stock")
-    public Long getStock() {
-        return stock;
-    }
-
-    public void setStock(Long stock) {
-        this.stock = stock;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Materiel materiel = (Materiel) o;
-        return Objects.equals(materielId, materiel.materielId) &&
-                Objects.equals(libelle, materiel.libelle) &&
-                Objects.equals(description, materiel.description) &&
-                Objects.equals(stock, materiel.stock);
+
+        if (id != null ? !id.equals(materiel.id) : materiel.id != null) return false;
+
+        return true;
+    }
+    @ManyToOne
+    @JoinColumn(name = "id_type", referencedColumnName = "id_type",insertable = false,updatable = false)
+    public Typemateriel getLeType() {
+        return leType;
+    }
+
+    public void setLeType(Typemateriel leType) {
+        this.leType = leType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(materielId, libelle, description, stock);
+        return id != null ? id.hashCode() : 0;
     }
 
-    @OneToMany(mappedBy = "leMateriel", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<Emprunt> getLesEmprunts() {
-        return lesEmprunts;
+    @Basic
+    @Column(name = "id_type", nullable = false)
+    public long getIdType() {
+        return idType;
     }
 
-    public void setLesEmprunts(Collection<Emprunt> lesEmprunts) {
-        this.lesEmprunts = lesEmprunts;
+    public void setIdType(long idType) {
+        this.idType = idType;
     }
 }
