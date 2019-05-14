@@ -154,6 +154,6 @@ public class Personne {
     }
     @Override
     public String toString(){
-        return "{\"personneId\":personneId,\"adresse\" :adresse, \"finContrat\":finContrat, \"nom\":nom, \"prenom\":prenom, \"identifiant\":identifiant, \"visage\":visage}";
+        return "{\"personneId\":"+personneId+",\"adresse\" :"+adresse+", \"finContrat\":"+finContrat+", \"nom\":"+nom+", \"prenom\":"+prenom+", \"identifiant\":"+identifiant+", \"visage\":"+visage+"}";
     }
 }
