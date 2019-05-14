@@ -12,6 +12,7 @@ public class Authentication {
     private int status = 0;
     private boolean switchSatus = false;
     public static Personne personne;
+    private Personne myUser;
 
     private void changeStatus(int value) {
         if (!switchSatus) {
@@ -33,13 +34,13 @@ public class Authentication {
             changeStatus(1);
         }
         switch (status) {
-            case 0: response = "Problème majeur";
+            case 0: response = "{\"status\":\"Problème majeur\"}";
                 break;
-            case 1:  response = "Connexion OK";
+            case 1:  response = "{\"status\":\"Connexion OK\",\"id\":\""+myUser.getPersonneId()+"\"}";
                 break;
-            case 2:  response = "Identifiant incorrect";
+            case 2:  response = "{\"status\":\"Identifiant incorrect\"}";
                 break;
-            case 3:  response = "Erreur connexion";
+            case 3:  response = "{\"status\":\"Erreur connexion\"}";
                     break;
         }
         return response;
@@ -47,8 +48,9 @@ public class Authentication {
 
     private void checkIdentifiant(String identifiant) {
         Personne personne = new Personne()  ;
+        myUser=personne.findPersonneByIdentifiant(identifiant);
         try{
-            if(!(personne.findPersonneByIdentifiant(identifiant)==null)){
+            if(!(myUser==null)){
                 changeStatus(1);
             }else{
                 changeStatus(2);
