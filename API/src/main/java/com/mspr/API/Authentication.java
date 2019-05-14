@@ -36,7 +36,7 @@ public class Authentication {
         switch (status) {
             case 0: response = "{\"status\":\"Problème majeur\"}";
                 break;
-            case 1:  response = "{\"status\":\"Connexion OK\",\"id\":\""+myUser.getPersonneId()+"\"}";
+            case 1:  response = "{\"status\":\"Connexion OK\",\"user\":\""+myUser.toString()+"\"}";
                 break;
             case 2:  response = "{\"status\":\"Identifiant incorrect\"}";
                 break;

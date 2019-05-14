@@ -152,4 +152,8 @@ public class Personne {
         PersonneRepo accountRepository = (PersonneRepo) RepoConfig.contextProvider().getApplicationContext().getBean("personneRepo");
         return accountRepository.findPersonneByIdentifiant(identifiant);
     }
+    @Override
+    public String toString(){
+        return "{\"personneId\":personneId,\"adresse\" :adresse, \"finContrat\":finContrat, \"nom\":nom, \"prenom\":prenom, \"identifiant\":identifiant, \"visage\":visage}";
+    }
 }
