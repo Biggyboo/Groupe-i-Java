@@ -3,14 +3,16 @@ package com.mspr.API.POJO;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Materiel {
     private Long id;
     private long idType;
     private Typemateriel leType;
+    private List<Emprunt> lesEmprunts;
     @Id
-    @Column(name = "id", nullable = false, length = 60)
+    @Column(name = "materiel_id", nullable = false, length = 60)
     @GeneratedValue(generator = "sequence-materiel")
     @GenericGenerator(
             name = "sequence-materiel",
@@ -63,5 +65,14 @@ public class Materiel {
 
     public void setIdType(long idType) {
         this.idType = idType;
+    }
+
+    @OneToMany(mappedBy = "leMateriel", cascade = CascadeType.ALL, orphanRemoval = true)
+    public List<Emprunt> getLesEmprunts() {
+        return lesEmprunts;
+    }
+
+    public void setLesEmprunts(List<Emprunt> lesEmprunts) {
+        this.lesEmprunts = lesEmprunts;
     }
 }

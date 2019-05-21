@@ -15,6 +15,7 @@ public class RepoConfig extends RepositoryRestConfigurerAdapter {
         config.exposeIdsFor(Role.class);
         config.exposeIdsFor(Materiel.class);
         config.exposeIdsFor(Typemateriel.class);
+        config.exposeIdsFor(Emprunt.class);
     }
 
     @Bean

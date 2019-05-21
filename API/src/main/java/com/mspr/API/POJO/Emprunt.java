@@ -3,28 +3,28 @@ package com.mspr.API.POJO;
 import javax.persistence.*;
 
 @Entity
-@IdClass(EmpruntPK.class)
 public class Emprunt {
-    private String idMateriel;
+    private long idMateriel;
     private long idPersonne;
     private boolean rendu;
     private String dateemprunt;
     private String daterendu;
-    private Personne laPersonne;
+    private String uuid;
     private Materiel leMateriel;
+    private Personne laPersonne;
 
-    @Id
-    @Column(name = "id_materiel", nullable = false, length = 60)
-    public String getIdMateriel() {
+    @Basic
+    @Column(name = "id_materiel", nullable = false,insertable = false,updatable = false)
+    public long getIdMateriel() {
         return idMateriel;
     }
 
-    public void setIdMateriel(String idMateriel) {
+    public void setIdMateriel(long idMateriel) {
         this.idMateriel = idMateriel;
     }
 
-    @Id
-    @Column(name = "id_personne", nullable = false)
+    @Basic
+    @Column(name = "id_personne", nullable = false,insertable = false,updatable = false)
     public long getIdPersonne() {
         return idPersonne;
     }
@@ -43,7 +43,7 @@ public class Emprunt {
         this.rendu = rendu;
     }
 
-    @Id
+    @Basic
     @Column(name = "dateemprunt", nullable = false, length = -1)
     public String getDateemprunt() {
         return dateemprunt;
@@ -63,6 +63,16 @@ public class Emprunt {
         this.daterendu = daterendu;
     }
 
+    @Id
+    @Column(name = "uuid", nullable = false, length = 25)
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,26 +80,37 @@ public class Emprunt {
 
         Emprunt emprunt = (Emprunt) o;
 
+        if (idMateriel != emprunt.idMateriel) return false;
         if (idPersonne != emprunt.idPersonne) return false;
         if (rendu != emprunt.rendu) return false;
-        if (idMateriel != null ? !idMateriel.equals(emprunt.idMateriel) : emprunt.idMateriel != null) return false;
         if (dateemprunt != null ? !dateemprunt.equals(emprunt.dateemprunt) : emprunt.dateemprunt != null) return false;
         if (daterendu != null ? !daterendu.equals(emprunt.daterendu) : emprunt.daterendu != null) return false;
+        if (uuid != null ? !uuid.equals(emprunt.uuid) : emprunt.uuid != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = idMateriel != null ? idMateriel.hashCode() : 0;
+        int result = (int) (idMateriel ^ (idMateriel >>> 32));
         result = 31 * result + (int) (idPersonne ^ (idPersonne >>> 32));
         result = 31 * result + (rendu ? 1 : 0);
         result = 31 * result + (dateemprunt != null ? dateemprunt.hashCode() : 0);
         result = 31 * result + (daterendu != null ? daterendu.hashCode() : 0);
+        result = 31 * result + (uuid != null ? uuid.hashCode() : 0);
         return result;
     }
     @ManyToOne
-    @JoinColumn(name = "personne", referencedColumnName = "personne_id")
+    @JoinColumn(name = "id_materiel",referencedColumnName = "materiel_id")
+    public Materiel getLeMateriel() {
+        return leMateriel;
+    }
+
+    public void setLeMateriel(Materiel leMateriel) {
+        this.leMateriel = leMateriel;
+    }
+    @ManyToOne
+    @JoinColumn(name = "id_personne",referencedColumnName = "personne_id")
     public Personne getLaPersonne() {
         return laPersonne;
     }
