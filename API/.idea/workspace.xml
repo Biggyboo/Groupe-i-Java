@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="364c3f76-23b7-460d-8cbd-23a2e9c6a574" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mspr/API/GetMaterialEmprunt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Emprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Emprunt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntPK.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Materiel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Materiel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mspr/API/configuration/RepoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mspr/API/configuration/RepoConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mspr/API/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mspr/API/Authentication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/Emprunt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/Emprunt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/EmpruntPK.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mspr/API/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mspr/API/ApiApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/Materiel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/Materiel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/Personne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/Personne.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mspr/API/configuration/RepoConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mspr/API/configuration/RepoConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/MaterielRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mspr/API/POJO/MaterielRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mspr/API/ApiApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mspr/API/ApiApplicationTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,27 +77,7 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="emprunt: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MSPR-Flutter@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="MSPR-Flutter: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="materiel: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MSPR-Flutter@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="MSPR-Flutter: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="typemateriel: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -113,25 +88,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Role.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/PersonneRepo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="46" column="33" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="33" />
+            <state relative-caret-position="144">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="38" />
               <folding>
-                <element signature="e#304#305#0" expanded="true" />
-                <element signature="e#333#334#0" expanded="true" />
-                <element signature="e#375#376#0" expanded="true" />
-                <element signature="e#411#412#0" expanded="true" />
-                <element signature="e#486#487#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#944#945#0" expanded="true" />
-                <element signature="e#996#997#0" expanded="true" />
-                <element signature="e#1082#1083#0" expanded="true" />
-                <element signature="e#1114#1115#0" expanded="true" />
-                <element signature="e#1178#1179#0" expanded="true" />
-                <element signature="e#1220#1221#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,8 +102,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielRepo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="168">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/mspr/API/ApiApplicationTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="20" column="78" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/GetMaterialEmprunt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,33 +135,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Materiel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+            <state relative-caret-position="506">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2023#2024#0" expanded="true" />
-                <element signature="e#2057#2058#0" expanded="true" />
-                <element signature="e#2118#2119#0" expanded="true" />
-                <element signature="e#2164#2165#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Emprunt.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/Rekognition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="103" column="72" selection-start-line="103" selection-start-column="72" selection-end-line="103" selection-end-column="72" />
+            <state relative-caret-position="504">
+              <caret line="41" selection-start-line="41" selection-end-line="43" selection-end-column="75" />
               <folding>
-                <element signature="e#2989#2990#0" expanded="true" />
-                <element signature="e#3022#3023#0" expanded="true" />
-                <element signature="e#3076#3077#0" expanded="true" />
-                <element signature="e#3120#3121#0" expanded="true" />
-                <element signature="e#3159#3160#0" expanded="true" />
-                <element signature="e#3192#3193#0" expanded="true" />
-                <element signature="e#3246#3247#0" expanded="true" />
-                <element signature="e#3290#3291#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,8 +159,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Personne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3012">
-              <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+            <state relative-caret-position="2496">
+              <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="152" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1078#1079#0" expanded="true" />
@@ -238,66 +210,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/configuration/RepoConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntRepo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/configuration/MvcConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/TypematerielRepo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/PersonneRepo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -325,6 +237,8 @@
       <find>_mate</find>
       <find>insert</find>
       <find>idType</find>
+      <find>²</find>
+      <find>findPersonneByIdentifiant</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -363,7 +277,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/TypeMateriel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/TypeMaterielRepo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/TypematerielRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Typemateriel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/Rekognition.java" />
@@ -371,10 +284,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/Authentication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Personne.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntPK.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/configuration/RepoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Materiel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Emprunt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/GetMaterielsLibre.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Materiel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielRepo.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mspr/API/ApiApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mspr/API/GetMaterialEmprunt.java" />
       </list>
     </option>
   </component>
@@ -396,7 +313,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -438,28 +354,34 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="API" type="462c0819:PsiDirectoryNode" />
-              <item name="configuration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="API" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="API" type="462c0819:PsiDirectoryNode" />
               <item name="POJO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="API" type="b2602c69:ProjectViewProjectNode" />
               <item name="API" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,7 +396,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557172855627" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ORM/correction" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -488,12 +410,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mspr.API.POJO" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.mspr.API" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.mspr.API.POJO" />
       <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.mspr.API.POJO" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -508,7 +433,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ApiApplication">
+    <configuration name="ApiApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mspr.API.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mspr.API" />
+      <option name="MAIN_CLASS_NAME" value="com.mspr.API.ApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="API" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mspr.API.ApiApplication" />
@@ -516,6 +457,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -543,7 +489,10 @@
       <workItem from="1557816117843" duration="6815000" />
       <workItem from="1557843706640" duration="598000" />
       <workItem from="1557856219632" duration="4391000" />
-      <workItem from="1558438681659" duration="10260000" />
+      <workItem from="1558438681659" duration="10922000" />
+      <workItem from="1558512448307" duration="1770000" />
+      <workItem from="1558542200077" duration="1807000" />
+      <workItem from="1558593045126" duration="3320000" />
     </task>
     <task id="LOCAL-00001" summary="APi fonctionnel (type primaire, pas de lien)">
       <created>1548083453063</created>
@@ -562,14 +511,28 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ApiApplicationTests_contextLoads - 2019.05.22 at 18h 52m 10s.xml">
+      <configuration name="ApiApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApiApplicationTests_contextLoads - 2019.05.22 at 18h 52m 58s.xml">
+      <configuration name="ApiApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApiApplicationTests_contextLoads - 2019.05.22 at 18h 53m 20s.xml">
+      <configuration name="ApiApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApiApplicationTests_contextLoads - 2019.05.23 at 08h 34m 27s.xml">
+      <configuration name="ApiApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87996000" />
+    <option name="totallyTimeSpent" value="95555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6003683" visible="true" weight="0.2889126" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5966851" visible="true" weight="0.29850745" />
       <window_info id="Structure" order="1" sideWeight="0.39811912" side_tool="true" weight="0.27025586" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -577,7 +540,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info id="Persistence" order="8" sideWeight="0.39963168" side_tool="true" visible="true" weight="0.2889126" />
+      <window_info id="Persistence" order="8" sideWeight="0.40331492" side_tool="true" visible="true" weight="0.29850745" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.33076075" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3296582" />
@@ -655,6 +618,9 @@
     <MESSAGE value="Reconaissance faciale avec gestion des erreurs" />
     <option name="LAST_COMMIT_MESSAGE" value="Reconaissance faciale avec gestion des erreurs" />
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/API$ApiApplication.ic" NAME="ApiApplication Coverage Results" MODIFIED="1558593275816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielController.java" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/HashMap.class" />
@@ -719,24 +685,8 @@
         <state relative-caret-position="-2376" />
       </provider>
     </entry>
-    <entry file="das://82928a67-14dc-4d3e-b2bc-3564a83917b7/database/MSPR-Flutter/schema/public/table/personne">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="68a19fdc-4cb6-4221-a300-639c7013d3e9">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://82928a67-14dc-4d3e-b2bc-3564a83917b7/database/MSPR-Flutter/schema/public/table/role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="68a19fdc-4cb6-4221-a300-639c7013d3e9">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://82928a67-14dc-4d3e-b2bc-3564a83917b7/database/MSPR-Flutter/schema/public/table/personne" />
+    <entry file="das://82928a67-14dc-4d3e-b2bc-3564a83917b7/database/MSPR-Flutter/schema/public/table/role" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/RoleRepo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -758,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/ApplicationContextProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -776,16 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
           <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/Rekognition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2880">
-          <caret line="140" column="5" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -819,40 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/PersonneRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntPK.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-end-line="8" />
-          <folding>
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntPK.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Role.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
+        <state relative-caret-position="816">
           <caret line="46" column="33" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="33" />
           <folding>
             <element signature="e#304#305#0" expanded="true" />
@@ -873,23 +776,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntRepo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/configuration/MvcConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Emprunt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="24">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -903,24 +800,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Materiel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/EmpruntRepo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        <state relative-caret-position="240">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2023#2024#0" expanded="true" />
-            <element signature="e#2057#2058#0" expanded="true" />
-            <element signature="e#2118#2119#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/GetMaterielsLibre.java" />
+    <entry file="das://82928a67-14dc-4d3e-b2bc-3564a83917b7/database/MSPR-Flutter/schema/public/table/materiel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="ebde1c96-239f-452a-bbba-d02436d399c6">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/PersonneRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/MaterielRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/configuration/MvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Personne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3012">
-          <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+        <state relative-caret-position="2496">
+          <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="152" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1078#1079#0" expanded="true" />
@@ -969,19 +902,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Emprunt.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/Rekognition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="103" column="72" selection-start-line="103" selection-start-column="72" selection-end-line="103" selection-end-column="72" />
+        <state relative-caret-position="504">
+          <caret line="41" selection-start-line="41" selection-end-line="43" selection-end-column="75" />
           <folding>
-            <element signature="e#2989#2990#0" expanded="true" />
-            <element signature="e#3022#3023#0" expanded="true" />
-            <element signature="e#3076#3077#0" expanded="true" />
-            <element signature="e#3120#3121#0" expanded="true" />
-            <element signature="e#3159#3160#0" expanded="true" />
-            <element signature="e#3192#3193#0" expanded="true" />
-            <element signature="e#3246#3247#0" expanded="true" />
-            <element signature="e#3290#3291#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mspr/API/ApiApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="20" column="78" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/POJO/Materiel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mspr/API/GetMaterialEmprunt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

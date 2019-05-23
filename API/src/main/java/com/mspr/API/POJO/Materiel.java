@@ -9,6 +9,7 @@ import java.util.List;
 public class Materiel {
     private Long id;
     private long idType;
+    private boolean isEmprunte;
     private Typemateriel leType;
     private List<Emprunt> lesEmprunts;
     @Id
@@ -74,5 +75,14 @@ public class Materiel {
 
     public void setLesEmprunts(List<Emprunt> lesEmprunts) {
         this.lesEmprunts = lesEmprunts;
+    }
+    @Basic
+    @Column(name = "isemprunte", nullable = false)
+    public boolean isEmprunte() {
+        return isEmprunte;
+    }
+
+    public void setEmprunte(boolean emprunte) {
+        isEmprunte = emprunte;
     }
 }

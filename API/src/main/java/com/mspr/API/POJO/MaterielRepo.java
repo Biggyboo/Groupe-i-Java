@@ -7,4 +7,5 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
 public interface MaterielRepo extends CrudRepository<Materiel, Long> {
+    List<Materiel> getMaterielsByEmprunte(boolean emprunt);
 }
