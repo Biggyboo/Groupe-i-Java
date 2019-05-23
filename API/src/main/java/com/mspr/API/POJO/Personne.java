@@ -1,8 +1,8 @@
 package com.mspr.API.POJO;
 
+import com.mspr.API.configuration.RepoConfig;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import java.util.*;
@@ -148,7 +148,7 @@ public class Personne {
         this.leRole = leRole;
     }
 
-    public List<Personne> findPersonneByIdentifiant(String identifiant) {
+    public Personne findPersonneByIdentifiant(String identifiant) {
         PersonneRepo accountRepository = (PersonneRepo) RepoConfig.contextProvider().getApplicationContext().getBean("personneRepo");
         return accountRepository.findPersonneByIdentifiant(identifiant);
     }

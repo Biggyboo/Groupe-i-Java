@@ -1,4 +1,4 @@
-package com.mspr.API.POJO;
+package com.mspr.API.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;

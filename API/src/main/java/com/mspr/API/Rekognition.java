@@ -20,10 +20,16 @@ import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.Map;
 
+import static com.mspr.API.Authentication.personne;
+
 @Controller
 @RequestMapping("/rekognition")
 @SessionAttributes("rekognition")
 public class Rekognition {
+    private int status = 0;
+    private boolean switchSatus = false;
+    private Personne p;
+
     public Rekognition(){}
 
     @RequestMapping(method= RequestMethod.POST, produces = {"application/json"})
@@ -67,6 +73,8 @@ public class Rekognition {
             List<CompareFacesMatch> faceDetails = compareFacesResult.getFaceMatches();
             if (!faceDetails.isEmpty()) {
                 System.out.println("Source image matches with target image");
+                personne = p;
+                changeStatus(6);
             } else {
                 System.out.println("Source image doesn't matches with target image");
             }
@@ -120,13 +128,7 @@ public class Rekognition {
     public String getUserFace(String identifiant) {
         Personne personne = new Personne();
         String b = null;
-        try {
-            for(Personne p: personne.findPersonneByIdentifiant(identifiant)){
-                b = p.getVisage();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        b = personne.findPersonneByIdentifiant(identifiant).getVisage();
         return b;
     }
 }

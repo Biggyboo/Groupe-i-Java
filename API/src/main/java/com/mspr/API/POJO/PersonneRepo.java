@@ -7,5 +7,5 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
 public interface PersonneRepo extends CrudRepository<Personne, Long> {
-    List<Personne> findPersonneByIdentifiant(String identifiant);
+    Personne findPersonneByIdentifiant(String identifiant);
 }
