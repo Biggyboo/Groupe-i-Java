@@ -64,7 +64,7 @@ public class Emprunt {
     }
 
     @Id
-    @Column(name = "uuid", nullable = false, length = 25)
+    @Column(name = "uuid", nullable = false, length = 50)
     public String getUuid() {
         return uuid;
     }
