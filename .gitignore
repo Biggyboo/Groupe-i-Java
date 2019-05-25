@@ -1,3 +1,4 @@
 
 \.idea/
 /API/src/main/java/resources/application.properties
+*.class
