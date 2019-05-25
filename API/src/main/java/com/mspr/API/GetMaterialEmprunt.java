@@ -14,11 +14,11 @@ import java.util.List;
 @SessionAttributes("materialEmprunt")
 public class GetMaterialEmprunt {
 
-    @RequestMapping(method= RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(method= RequestMethod.GET, produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public List<Materiel> run() {
-        MaterielRepo accountRepository = (MaterielRepo) RepoConfig.contextProvider().getApplicationContext().getBean("materielRepo");
-        List<Materiel> myList= accountRepository.getMaterielsByEmprunte(false);
+        MaterielRepo materialRepository = (MaterielRepo) RepoConfig.contextProvider().getApplicationContext().getBean("materielRepo");
+        List<Materiel> myList= materialRepository.getMaterielsByEmprunte(false);
         myList.forEach(materiel -> {
             materiel.setLeType(null);
             materiel.setLesEmprunts(null);
