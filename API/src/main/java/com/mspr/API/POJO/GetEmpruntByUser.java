@@ -20,12 +20,14 @@ public class GetEmpruntByUser {
         List<Emprunt> emprunts=empruntRepo.getEmpruntsByIdPersonne(Long.parseLong(json.get("id")));
         List<Emprunt> vreturn=new ArrayList<>(0);
         emprunts.forEach(emprunt -> {
-            Emprunt myEmprunt=new Emprunt();
-            myEmprunt.setIdMateriel(emprunt.getIdMateriel());
-            myEmprunt.setIdPersonne(emprunt.getIdPersonne());
-            myEmprunt.setDateemprunt(emprunt.getDateemprunt());
-            myEmprunt.setUuid(emprunt.getUuid());
-            vreturn.add(myEmprunt);
+            if(!emprunt.isRendu()) {
+                Emprunt myEmprunt = new Emprunt();
+                myEmprunt.setIdMateriel(emprunt.getIdMateriel());
+                myEmprunt.setIdPersonne(emprunt.getIdPersonne());
+                myEmprunt.setDateemprunt(emprunt.getDateemprunt());
+                myEmprunt.setUuid(emprunt.getUuid());
+                vreturn.add(myEmprunt);
+            }
         });
         return vreturn;
     }
